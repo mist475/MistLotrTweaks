@@ -1,0 +1,3 @@
+dependencies {
+    implementation deobf('https://media.forgecdn.net/files/4091/561/LOTRMod+v36.15.jar')
+}

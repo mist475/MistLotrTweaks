@@ -1,0 +1,13 @@
+{
+	"modList": [{
+		"modid": "${modId}",
+		"name": "${modName}",
+		"description": "Mist475's Lotr tweaks; small QoL changes for the lotr mod",
+		"version": "${modVersion}",
+		"mcversion": "${minecraftVersion}",
+		"url": "TODO",
+		"authorList": ["Mist475"],
+		"credits": "Mevans for lotr, jss2a98aj and co. for general structure (adapted from BugTorch)",
+		"dependencies": [ "UniMixins" ]
+	}]
+}
