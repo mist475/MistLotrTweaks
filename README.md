@@ -20,11 +20,12 @@ If Mevans wants to incorporate any of my changes into lotr itself/ implement a s
 Feature list:
 
 - Fellowship permission icons are now shown in the main fellowship screen as well as the per-fellowship screen (see image)
-TODO: image
+![2023-06-04_18 15 24](https://github.com/mist475/MistLotrTweaks/assets/70655895/c92826c2-d77a-4eac-967e-2f7c19770922)
+
 
 ## Attribution
 
-The general structure of this mod was adapted from [BugTorch](https://github.com/jss2a98aj/BugTorch)
+The general structure of this mod was adapted from [BugTorch](https://github.com/jss2a98aj/BugTorch).
 The rendering code for the improved fellowship screen was adapted from lotr itself.
 
 ## License
