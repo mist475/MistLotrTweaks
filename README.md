@@ -1,6 +1,6 @@
 # Mist475's Lotr Tweaks
 
-This mod adds QoL changes to the [Lotr mod: Legacy](https://www.curseforge.com/minecraft/mc-mods/the-lord-of-the-rings-mod-legacy) by Mevans.
+This mod adds some QoL changes to the [Lotr mod: Legacy](https://www.curseforge.com/minecraft/mc-mods/the-lord-of-the-rings-mod-legacy) by Mevans.
 
 ## Requirements
 
@@ -12,8 +12,11 @@ This mod adds QoL changes to the [Lotr mod: Legacy](https://www.curseforge.com/m
 QoL changes for the lotr mod.
 I've spent a lot of time playing with the lotr mod, it's the only content-adding mod I've consistently played with over the years.
 Yet there's always minor annoyances, things that could be more convenient, incompatibilities with other mods, etc.
-
 With this mod I'm trying to fix some of these.
+
+Every feature the mod adds is controlled by the config. Making it possible to enable/disable specific parts of the mod.
+At the moment the only changes are client-side, though I'm planning on adding server side-changes as well.
+
 
 If Mevans wants to incorporate any of my changes into lotr itself/ implement a similar feature he is more than welcome to do so.
 
