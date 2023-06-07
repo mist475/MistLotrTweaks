@@ -23,16 +23,22 @@ public class MistLotrTweaksLateMixins implements ILateMixinLoader {
 
     @Override
     public List<String> getMixins(Set<String> loadedMods) {
-        if (! loadedMods.contains("lotr")) {
+        if (!loadedMods.contains("lotr")) {
             MistLotrTweaksConfig.enableBetterFellowshipScreen = false;
+            MistLotrTweaksConfig.enableReforgeAid = false;
         }
 
         MistLotrTweaks.logger.info("Kicking off Mist's Lotr Tweaks late mixins.");
         boolean client = FMLLaunchHandler.side().isClient();
 
         List<String> mixins = new ArrayList<>();
-        if (client && MistLotrTweaksConfig.enableBetterFellowshipScreen) {
-            mixins.add("MixinBetterFellowshipScreen");
+        if (client) {
+            if (MistLotrTweaksConfig.enableBetterFellowshipScreen) {
+                mixins.add("MixinBetterFellowshipScreen");
+            }
+            if (MistLotrTweaksConfig.enableReforgeAid) {
+                mixins.add("MixinReforgeAid");
+            }
         }
 
         return mixins;
