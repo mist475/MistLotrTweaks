@@ -23,9 +23,8 @@ If Mevans wants to incorporate any of my changes into lotr itself/ implement a s
 Feature list:
 
 - Fellowship permission icons are now shown in the main fellowship screen as well as the per-fellowship screen (see image)
-![2023-06-04_18 15 24](https://github.com/mist475/MistLotrTweaks/assets/70655895/c92826c2-d77a-4eac-967e-2f7c19770922)
+![2023-06-04_18 15 24](https://github.com/mist475/MistLotrTweaks/assets/70655895/819cb86e-5ff2-4fa0-895a-d598298b05a3)
 - When reforging, the item tooltip is now shown permanently to make reforging items less tedious TODO: image
-
 
 ## Attribution
 
