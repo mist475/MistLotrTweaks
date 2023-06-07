@@ -17,7 +17,6 @@ With this mod I'm trying to fix some of these.
 Every feature the mod adds is controlled by the config. Making it possible to enable/disable specific parts of the mod.
 At the moment the only changes are client-side, though I'm planning on adding server side-changes as well.
 
-
 If Mevans wants to incorporate any of my changes into lotr itself/ implement a similar feature he is more than welcome to do so.
 
 Feature list:
@@ -25,7 +24,6 @@ Feature list:
 - Fellowship permission icons are now shown in the main fellowship screen as well as the per-fellowship screen (see image)
 ![2023-06-04_18 15 24](https://github.com/mist475/MistLotrTweaks/assets/70655895/819cb86e-5ff2-4fa0-895a-d598298b05a3)
 - When reforging, the item tooltip is now shown permanently to make reforging items less tedious ![2023-06-07_18 54 01](https://github.com/mist475/MistLotrTweaks/assets/70655895/cd0edbb9-da0d-4102-9b6b-45aab64c53ef)
-
 
 ## Attribution
 
