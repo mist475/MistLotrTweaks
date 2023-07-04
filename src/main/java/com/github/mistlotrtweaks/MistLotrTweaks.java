@@ -25,7 +25,7 @@ public class MistLotrTweaks {
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event) {
         String configFolder = event.getModConfigurationDirectory().getAbsolutePath() + File.separator + MODID + File.separator;
-        MistLotrTweaksConfig.loadClientConfig(new File(configFolder + "client.cfg"));
+        MistLotrTweaksConfig.loadConfig(new File(configFolder + "config.cfg"));
     }
 
 }

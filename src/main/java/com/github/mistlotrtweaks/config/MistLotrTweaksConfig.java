@@ -19,7 +19,7 @@ public class MistLotrTweaksConfig {
     /**
      * Client side changes
      */
-    public static void loadClientConfig(File configFile) {
+    public static void loadConfig(File configFile) {
         Configuration config = new Configuration(configFile);
 
         enableBetterFellowshipScreen = config.getBoolean("betterFellowshipScreen", categoryProductivity, true, "Adds fellowship permission icons to the fellowship list (shows if map loc is enabled, if you are guide, if pvp is enabled and if unit friendly fire is enabled)");
