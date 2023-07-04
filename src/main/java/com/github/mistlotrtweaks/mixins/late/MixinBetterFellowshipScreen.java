@@ -1,6 +1,6 @@
 package com.github.mistlotrtweaks.mixins.late;
 
-import com.github.mistlotrtweaks.Util;
+import com.github.mistlotrtweaks.util.Util;
 import lotr.client.gui.LOTRGuiFellowships;
 import lotr.client.gui.LOTRGuiMenuBase;
 import lotr.common.fellowship.LOTRFellowshipClient;

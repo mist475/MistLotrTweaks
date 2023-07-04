@@ -21,6 +21,7 @@ If Mevans wants to incorporate any of my changes into lotr itself/ implement a s
 
 Feature list:
 
+- Make lotr compatible with java 12+ via [lwjgl3ify](https://github.com/GTNewHorizons/lwjgl3ify)
 - Fellowship permission icons are now shown in the main fellowship screen as well as the per-fellowship screen (see image)
 ![2023-06-04_18 15 24](https://github.com/mist475/MistLotrTweaks/assets/70655895/819cb86e-5ff2-4fa0-895a-d598298b05a3)
 - When reforging, the item tooltip is now shown permanently to make reforging items less tedious ![2023-06-07_18 54 01](https://github.com/mist475/MistLotrTweaks/assets/70655895/cd0edbb9-da0d-4102-9b6b-45aab64c53ef)

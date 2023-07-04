@@ -26,21 +26,30 @@ public class MistLotrTweaksLateMixins implements ILateMixinLoader {
         if (!loadedMods.contains("lotr")) {
             MistLotrTweaksConfig.enableBetterFellowshipScreen = false;
             MistLotrTweaksConfig.enableReforgeAid = false;
+            MistLotrTweaksConfig.enableFixJava12Compat = false;
         }
 
         MistLotrTweaks.logger.info("Kicking off Mist's Lotr Tweaks late mixins.");
         boolean client = FMLLaunchHandler.side().isClient();
 
         List<String> mixins = new ArrayList<>();
-        if (client) {
-            if (MistLotrTweaksConfig.enableBetterFellowshipScreen) {
-                mixins.add("MixinBetterFellowshipScreen");
+
+        if(loadedMods.contains("lotr")) {
+            if (client) {
+                if (MistLotrTweaksConfig.enableBetterFellowshipScreen) {
+                    mixins.add("MixinBetterFellowshipScreen");
+                }
+                if (MistLotrTweaksConfig.enableReforgeAid) {
+                    mixins.add("MixinReforgeAid");
+                }
             }
-            if (MistLotrTweaksConfig.enableReforgeAid) {
-                mixins.add("MixinReforgeAid");
+
+            if (MistLotrTweaksConfig.enableFixJava12Compat) {
+                mixins.add("MixinLOTRLogReflection");
+                mixins.add("MixinRedirectHuornAI");
+                mixins.add("MixinRemoveUnlockFinalField");
             }
         }
-
         return mixins;
     }
 
