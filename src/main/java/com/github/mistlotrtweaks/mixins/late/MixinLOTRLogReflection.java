@@ -2,15 +2,12 @@ package com.github.mistlotrtweaks.mixins.late;
 
 import cpw.mods.fml.common.FMLLog;
 import cpw.mods.fml.common.ObfuscationReflectionHelper;
-import cpw.mods.fml.relauncher.ReflectionHelper;
 import lotr.common.util.LOTRLog;
 import net.minecraft.server.MinecraftServer;
 import org.apache.logging.log4j.Logger;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
 import org.spongepowered.asm.mixin.Shadow;
-
-import java.lang.reflect.Field;
 
 @Mixin(LOTRLog.class)
 public class MixinLOTRLogReflection {
@@ -24,10 +21,8 @@ public class MixinLOTRLogReflection {
     @Overwrite(remap = false)
     public static void findLogger() {
         try {
-            final Field field = ReflectionHelper.findField(
-                MinecraftServer.class,
-                ObfuscationReflectionHelper.remapFieldNames(MinecraftServer.class.getName(), "field_147145_h", "logger"));
-            logger = (Logger) field.get(null);
+            logger = ObfuscationReflectionHelper
+                .getPrivateValue(MinecraftServer.class, null, "field_147145_h", "logger");
 
         }
         catch (final Exception e) {

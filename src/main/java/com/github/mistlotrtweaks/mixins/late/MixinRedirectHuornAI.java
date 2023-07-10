@@ -1,5 +1,8 @@
 package com.github.mistlotrtweaks.mixins.late;
 
+import com.github.mistlotrtweaks.util.Fields;
+import cpw.mods.fml.common.FMLLog;
+import cpw.mods.fml.common.ObfuscationReflectionHelper;
 import cpw.mods.fml.relauncher.ReflectionHelper;
 import lotr.common.entity.ai.LOTREntityAIAvoidHuorn;
 import lotr.common.entity.npc.LOTREntityHuornBase;
@@ -12,10 +15,16 @@ import org.spongepowered.asm.mixin.injection.Redirect;
 
 import java.lang.reflect.Field;
 
-import static com.github.mistlotrtweaks.util.Util.setPrivateFinalValue;
-
 @Mixin(LOTREntityAIAvoidHuorn.class)
 public class MixinRedirectHuornAI extends EntityAIAvoidEntity {
+    private static final Field entityField = ReflectionHelper.findField(
+        EntityAIAvoidEntity.class,
+        ObfuscationReflectionHelper
+            .remapFieldNames(EntityAIAvoidEntity.class.getName(), "field_75380_a", "theEntity"));
+
+    @SuppressWarnings("rawtypes")
+    private static final Fields.ClassFields.Field accessor = Fields.ofClass(EntityAIAvoidEntity.class)
+        .getUntypedField(Fields.LookupType.DECLARED_IN_HIERARCHY, "field_98218_a");
 
     public MixinRedirectHuornAI(final EntityCreature entity, float range, double near, double far) {
         super(entity, LOTREntityHuornBase.class, range, near, far);
@@ -31,9 +40,9 @@ public class MixinRedirectHuornAI extends EntityAIAvoidEntity {
             target = "Llotr/common/LOTRReflection;unlockFinalField(Ljava/lang/reflect/Field;)V",
             remap = false),
         remap = false)
+    @SuppressWarnings("unchecked")
     private void WriteFinalValue(Field f) {
         try {
-            Field entityField = ReflectionHelper.findField(EntityAIAvoidEntity.class, "field_75380_a", "theEntity");
             EntityCreature entity = (EntityCreature) entityField.get(this);
 
             IEntitySelector replaceSelect = target -> {
@@ -44,9 +53,9 @@ public class MixinRedirectHuornAI extends EntityAIAvoidEntity {
                     return false;
                 }
             };
-            setPrivateFinalValue(EntityAIAvoidEntity.class, this, replaceSelect, "field_98218_a");
+            accessor.setValue(this, replaceSelect);
         } catch (Exception ignored) {
-
+            FMLLog.warning("LOTR: Error adding Avoid Huorn AI");
         }
 
     }

@@ -13,7 +13,7 @@ import java.io.File;
     name = MistLotrTweaks.NAME,
     version = MistLotrTweaks.VERSION,
     acceptableRemoteVersions = "*",
-    dependencies = "required-after:gtnhmixins@[2.0.0,);required-after:lotr;"
+    dependencies = "required-after:gtnhmixins@[2.0.0,);required-after:lotr;after:hodgepodge@[2.2.23,)" //Hodgepodge 2.2.23 has the same java 12+ compat fix, I disable the fix here if hodgepodge is present
 )
 public class MistLotrTweaks {
 

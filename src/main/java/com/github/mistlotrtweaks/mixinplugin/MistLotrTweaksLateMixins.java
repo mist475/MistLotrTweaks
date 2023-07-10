@@ -43,8 +43,8 @@ public class MistLotrTweaksLateMixins implements ILateMixinLoader {
                     mixins.add("MixinReforgeAid");
                 }
             }
-
-            if (MistLotrTweaksConfig.enableFixJava12Compat) {
+            //Hodgepodge 2.2.23+ contains the same patch
+            if (MistLotrTweaksConfig.enableFixJava12Compat && ! loadedMods.contains("hodgepodge")) {
                 mixins.add("MixinLOTRLogReflection");
                 mixins.add("MixinRedirectHuornAI");
                 mixins.add("MixinRemoveUnlockFinalField");
