@@ -6,6 +6,7 @@ This mod adds some QoL changes to the [Lotr mod: Legacy](https://www.curseforge.
 
 - [UniMixins](https://github.com/LegacyModdingMC/UniMixins)
 - [Lotr mod: Legacy](https://www.curseforge.com/minecraft/mc-mods/the-lord-of-the-rings-mod-legacy) or one of it's sub-mods
+- If [Hodgepodge](https://modrinth.com/mod/hodgepodge) is used, the mod requires version 2.2.23 or later
 
 ## What it does
 
@@ -15,16 +16,16 @@ Yet there's always minor annoyances, things that could be more convenient, incom
 With this mod I'm trying to fix some of these.
 
 Every feature the mod adds is controlled by the config. Making it possible to enable/disable specific parts of the mod.
-At the moment the only changes are client-side, though I'm planning on adding server side-changes as well.
 
 If Mevans wants to incorporate any of my changes into lotr itself/ implement a similar feature he is more than welcome to do so.
 
 Feature list:
 
-- Make lotr compatible with java 12+ via [lwjgl3ify](https://github.com/GTNewHorizons/lwjgl3ify)
+- Make lotr compatible with java 12+ via [lwjgl3ify](https://github.com/GTNewHorizons/lwjgl3ify). Note: I added the same patches to [Hodgepodge](https://modrinth.com/mod/hodgepodge) 2.2.23+, I disable the patches here if it's detected
 - Fellowship permission icons are now shown in the main fellowship screen as well as the per-fellowship screen (see image)
 ![2023-06-04_18 15 24](https://github.com/mist475/MistLotrTweaks/assets/70655895/819cb86e-5ff2-4fa0-895a-d598298b05a3)
 - When reforging, the item tooltip is now shown permanently to make reforging items less tedious ![2023-06-07_18 54 01](https://github.com/mist475/MistLotrTweaks/assets/70655895/cd0edbb9-da0d-4102-9b6b-45aab64c53ef)
+- Configurable redstone ore generation in Middle Earth with 3 modes; off, only in red mountains, everywhere. Also configurable are rarity, vein size and the minimum/maximum y level
 
 ## Attribution
 

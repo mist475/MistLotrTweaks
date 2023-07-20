@@ -49,6 +49,12 @@ public class MistLotrTweaksLateMixins implements ILateMixinLoader {
                 mixins.add("MixinRedirectHuornAI");
                 mixins.add("MixinRemoveUnlockFinalField");
             }
+            if (MistLotrTweaksConfig.addRedstoneToMiddleEarth == 1) {
+                mixins.add("MixinLOTRBiomeGenRedMountains");
+            }
+            else if (MistLotrTweaksConfig.addRedstoneToMiddleEarth == 2) {
+                mixins.add("MixinLOTRBiome");
+            }
         }
         return mixins;
     }
