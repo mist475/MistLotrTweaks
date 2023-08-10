@@ -34,6 +34,10 @@ public class MistLotrTweaksEarlyMixins implements IFMLLoadingPlugin, IEarlyMixin
         boolean client = FMLLaunchHandler.side().isClient();
         List<String> mixins = new ArrayList<>();
 
+        if (client) {
+            mixins.add("MixinEntityRenderer");
+        }
+
         return mixins;
     }
 

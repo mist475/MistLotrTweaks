@@ -26,6 +26,7 @@ Feature list:
 ![2023-06-04_18 15 24](https://github.com/mist475/MistLotrTweaks/assets/70655895/819cb86e-5ff2-4fa0-895a-d598298b05a3)
 - When reforging, the item tooltip is now shown permanently to make reforging items less tedious ![2023-06-07_18 54 01](https://github.com/mist475/MistLotrTweaks/assets/70655895/cd0edbb9-da0d-4102-9b6b-45aab64c53ef)
 - Configurable redstone ore generation in Middle Earth with 3 modes; off, only in red mountains, everywhere. Also configurable are rarity, vein size and the minimum/maximum y level
+- Fix heavy lag when both lotr & [weather2](https://legacy.curseforge.com/minecraft/mc-mods/weather-storms-tornadoes) are installed. I have not tested the mod beyond this so the chance of more things breaking is quite present.
 
 ## Attribution
 

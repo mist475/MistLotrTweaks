@@ -27,6 +27,7 @@ public class MistLotrTweaksLateMixins implements ILateMixinLoader {
             MistLotrTweaksConfig.enableBetterFellowshipScreen = false;
             MistLotrTweaksConfig.enableReforgeAid = false;
             MistLotrTweaksConfig.enableFixJava12Compat = false;
+            MistLotrTweaksConfig.enableWeather2LOTRCompat = false;
         }
 
         MistLotrTweaks.logger.info("Kicking off Mist's Lotr Tweaks late mixins.");
@@ -34,8 +35,12 @@ public class MistLotrTweaksLateMixins implements ILateMixinLoader {
 
         List<String> mixins = new ArrayList<>();
 
-        if(loadedMods.contains("lotr")) {
+        if (loadedMods.contains("lotr")) {
             if (client) {
+                if (MistLotrTweaksConfig.enableWeather2LOTRCompat && loadedMods.contains("weather2")) {
+                    mixins.add("MixinWeather2GuiConfigEditor");
+                    mixins.add("MixinWeather2ClientTickHandler");
+                }
                 if (MistLotrTweaksConfig.enableBetterFellowshipScreen) {
                     mixins.add("MixinBetterFellowshipScreen");
                 }
@@ -44,7 +49,7 @@ public class MistLotrTweaksLateMixins implements ILateMixinLoader {
                 }
             }
             //Hodgepodge 2.2.23+ contains the same patch
-            if (MistLotrTweaksConfig.enableFixJava12Compat && ! loadedMods.contains("hodgepodge")) {
+            if (MistLotrTweaksConfig.enableFixJava12Compat && !loadedMods.contains("hodgepodge")) {
                 mixins.add("MixinLOTRLogReflection");
                 mixins.add("MixinRedirectHuornAI");
                 mixins.add("MixinRemoveUnlockFinalField");

@@ -15,6 +15,7 @@ public class MistLotrTweaksConfig {
 
     public static boolean enableFixJava12Compat;
 
+    public static boolean enableWeather2LOTRCompat;
     public static int addRedstoneToMiddleEarth;
 
     public static int redstoneVeinSize;
@@ -40,6 +41,8 @@ public class MistLotrTweaksConfig {
         enableReforgeAid = config.getBoolean("reforgeAid", categoryProductivity, true, "Shows the modifiers of the item you're reforging without having to hover over the item");
 
         enableFixJava12Compat = config.getBoolean("fixJava12Compat", categoryBugFixes, true, "Fix java 12+ compatability");
+
+        enableWeather2LOTRCompat = config.getBoolean("weather2Compat", categoryModdedCompatability, true, "Fix clash between weather2 and LOTRs EntityRenderer. This fixes heavy lag when both are installed. This does NOT fix any other incompatibilities that might be present");
 
         addRedstoneToMiddleEarth = config.getInt("redstoneInME", categoryModdedCompatability, 1, 0, 2, "Add redstone ore generation to middle earth, 0 = off, 1 = only in red mountains, 2 = everywhere");
         redstoneVeinSize = config.getInt("redstoneVeinSize", categoryModdedCompatability, 8, 0, 64, "Redstone ore vein size");
