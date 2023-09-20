@@ -2,4 +2,5 @@ dependencies {
     implementation rfg.deobf('curse.maven:lotr-423748:4091561')
     compileOnly rfg.deobf('curse.maven:weather2-237746:2513048')
     compileOnly rfg.deobf('curse.maven:coroutil-237749:2388794')
+    implementation rfg.deobf("curse.maven:dmod-513764:4523626")
 }

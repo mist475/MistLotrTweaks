@@ -27,6 +27,7 @@ Feature list:
 - When reforging, the item tooltip is now shown permanently to make reforging items less tedious ![2023-06-07_18 54 01](https://github.com/mist475/MistLotrTweaks/assets/70655895/cd0edbb9-da0d-4102-9b6b-45aab64c53ef)
 - Configurable redstone ore generation in Middle Earth with 3 modes; off, only in red mountains, everywhere. Also configurable are rarity, vein size and the minimum/maximum y level
 - Fix heavy lag when both lotr & [weather2](https://legacy.curseforge.com/minecraft/mc-mods/weather-storms-tornadoes) are installed. I have not tested the mod beyond this so the chance of more things breaking is quite present.
+- Add [DMod](https://www.curseforge.com/minecraft/mc-mods/dmod) foxes to middle earth biomes where foxes spawn in renewed. In the northern forests and the northlands there is a chance that snow foxes will spawn instead of regular foxes.
 
 ## Attribution
 

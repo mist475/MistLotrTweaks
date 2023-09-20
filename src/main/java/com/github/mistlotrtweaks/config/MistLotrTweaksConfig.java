@@ -23,6 +23,11 @@ public class MistLotrTweaksConfig {
     public static int redstoneMaxYLevel;
     public static float redstoneRarity;
 
+    public static boolean addDModFoxesToME;
+    public static int baseFoxSpawnChance;
+    public static int minimumFoxSpawnGroup;
+    public static int maximumFoxSpawnGroup;
+
     //Category names
     static final String categoryProductivity = "Productivity";
 
@@ -50,6 +55,14 @@ public class MistLotrTweaksConfig {
         redstoneMaxYLevel = config.getInt("redstoneMaxYLevel", categoryModdedCompatability, 48, 0, 256, "Redstone ore maximum y level");
         redstoneRarity = config.getFloat("redstoneRarity", categoryModdedCompatability, 8, 0, 100, "Redstone ore rarity");
 
+        addDModFoxesToME = config.getBoolean("addDModFoxesToME", categoryModdedCompatability, true, "Add DMod foxes to lotr biomes that have foxes in the 1.16.5 version of the mod");
+        //Value taken from renewed 5.5
+        //In renewed the weight for wolves is 10 * multiplier, in legacy it varies but is either 10 or 4 usually
+        //As such I've taken the weight from renewed, halved it and then apply multiplier per biome
+        baseFoxSpawnChance = config.getInt("baseFoxSpawnChance", categoryModdedCompatability, 8, 0, 100, "Base chance for foxes to spawn in lotr biomes that have foxes");
+
+        minimumFoxSpawnGroup = config.getInt("baseFoxSpawnChance", categoryModdedCompatability, 2, 0, 100, "Minimum group size for fox spawns");
+        maximumFoxSpawnGroup = config.getInt("baseFoxSpawnChance", categoryModdedCompatability, 4, 0, 100, "Maximum group size for fox spawns");
         if (config.hasChanged()) {
             config.save();
         }

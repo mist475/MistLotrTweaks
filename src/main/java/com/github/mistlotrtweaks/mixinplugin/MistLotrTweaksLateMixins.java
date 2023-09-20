@@ -60,6 +60,10 @@ public class MistLotrTweaksLateMixins implements ILateMixinLoader {
             else if (MistLotrTweaksConfig.addRedstoneToMiddleEarth == 2) {
                 mixins.add("MixinLOTRBiome");
             }
+
+            if (loadedMods.contains("dmod")) {
+                mixins.add("MixinDModFoxType");
+            }
         }
         return mixins;
     }
