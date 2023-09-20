@@ -61,8 +61,8 @@ public class MistLotrTweaksConfig {
         //As such I've taken the weight from renewed, halved it and then apply multiplier per biome
         baseFoxSpawnChance = config.getInt("baseFoxSpawnChance", categoryModdedCompatability, 8, 0, 100, "Base chance for foxes to spawn in lotr biomes that have foxes");
 
-        minimumFoxSpawnGroup = config.getInt("baseFoxSpawnChance", categoryModdedCompatability, 2, 0, 100, "Minimum group size for fox spawns");
-        maximumFoxSpawnGroup = config.getInt("baseFoxSpawnChance", categoryModdedCompatability, 4, 0, 100, "Maximum group size for fox spawns");
+        minimumFoxSpawnGroup = config.getInt("minimumFoxSpawnGroup", categoryModdedCompatability, 2, 0, 100, "Minimum group size for fox spawns");
+        maximumFoxSpawnGroup = config.getInt("maximumFoxSpawnGroup", categoryModdedCompatability, 4, 0, 100, "Maximum group size for fox spawns");
         if (config.hasChanged()) {
             config.save();
         }
