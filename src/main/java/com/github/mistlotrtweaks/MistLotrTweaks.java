@@ -22,7 +22,7 @@ public class MistLotrTweaks {
 
     public static final String MODID = "mistlotrtweaks";
     public static final String NAME = "Mist's Lotr tweaks";
-    public static final String VERSION = "GRADLETOKEN_VERSION";
+    public static final String VERSION = MistLotrTweaksVersion.GRADLETOKEN_VERSION;
     public static final Logger logger = LogManager.getLogger(NAME);
 
     @Mod.EventHandler
