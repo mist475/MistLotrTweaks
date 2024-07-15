@@ -3,4 +3,5 @@ dependencies {
     compileOnly rfg.deobf('curse.maven:weather2-237746:2513048')
     compileOnly rfg.deobf('curse.maven:coroutil-237749:2388794')
     implementation rfg.deobf("curse.maven:dmod-513764:4523626")
+    compileOnly("Et-Futurum-Requiem:Et-Futurum-Requiem:2.6.0:dev")
 }

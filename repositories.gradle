@@ -1,5 +1,22 @@
 // Add any additional repositories for your dependencies here
 
 repositories {
+    exclusiveContent {
+        forRepository {
+            ivy {
+                name = 'Et Futurum Requiem releases'
+                url = 'https://github.com/Roadhog360/Et-Futurum-Requiem/releases/download/'
+                patternLayout {
+                    artifact '[revision]/Et_Futurum_Requiem-[revision](-[classifier])-nomixin(.[ext])'
+                }
+                metadataSources {
+                    artifact()
+                }
+            }
+        }
+        filter {
+            includeGroup('Et-Futurum-Requiem')
+        }
+    }
 
 }

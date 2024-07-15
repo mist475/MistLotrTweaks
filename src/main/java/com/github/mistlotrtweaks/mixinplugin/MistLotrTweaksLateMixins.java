@@ -61,8 +61,14 @@ public class MistLotrTweaksLateMixins implements ILateMixinLoader {
                 mixins.add("MixinLOTRBiome");
             }
 
-            if (loadedMods.contains("dmod")) {
+            if (MistLotrTweaksConfig.addDModFoxesToME && loadedMods.contains("dmod")) {
                 mixins.add("MixinDModFoxType");
+            }
+
+            // Technically fails when the old etfuturum is installed, but this feature can be disabled, so it doesn't matter
+            if (MistLotrTweaksConfig.addEFRBeehivesToME && loadedMods.contains("etfuturum")) {
+                mixins.add("MixinWorldGenLOTRBeeTrees");
+                mixins.add("MixinLOTRTreeType");
             }
         }
         return mixins;

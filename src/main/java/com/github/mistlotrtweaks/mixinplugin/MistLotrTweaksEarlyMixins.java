@@ -27,7 +27,7 @@ public class MistLotrTweaksEarlyMixins implements IFMLLoadingPlugin, IEarlyMixin
 
     @Override
     public List<String> getMixins(Set<String> loadedCoreMods) {
-        String configFolder =  "config" + File.separator + MistLotrTweaks.MODID + File.separator;
+        String configFolder = "config" + File.separator + MistLotrTweaks.MODID + File.separator;
         MistLotrTweaksConfig.loadConfig(new File(Launch.minecraftHome, configFolder + "config.cfg"));
 
         MistLotrTweaks.logger.info("Kicking off Mist's Lotr tweaks early mixins.");
@@ -36,6 +36,10 @@ public class MistLotrTweaksEarlyMixins implements IFMLLoadingPlugin, IEarlyMixin
 
         if (client) {
             mixins.add("MixinEntityRenderer");
+        }
+
+        if (MistLotrTweaksConfig.addEFRBeehivesToME) {
+            mixins.add("MixinWorldGenAbstractTree");
         }
 
         return mixins;

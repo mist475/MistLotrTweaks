@@ -28,12 +28,14 @@ public class MistLotrTweaksConfig {
     public static int minimumFoxSpawnGroup;
     public static int maximumFoxSpawnGroup;
 
+    public static boolean addEFRBeehivesToME;
+
     //Category names
     static final String categoryProductivity = "Productivity";
 
     static final String categoryBugFixes = "BugFixes";
 
-    static final String categoryModdedCompatability = "Features that make working with other mods easier";
+    static final String categoryModdedCompatibility = "Features that make working with other mods easier";
 
     /**
      * General config
@@ -45,24 +47,27 @@ public class MistLotrTweaksConfig {
 
         enableReforgeAid = config.getBoolean("reforgeAid", categoryProductivity, true, "Shows the modifiers of the item you're reforging without having to hover over the item");
 
-        enableFixJava12Compat = config.getBoolean("fixJava12Compat", categoryBugFixes, true, "Fix java 12+ compatability");
+        enableFixJava12Compat = config.getBoolean("fixJava12Compat", categoryBugFixes, true, "Fix java 12+ compatibility");
 
-        enableWeather2LOTRCompat = config.getBoolean("weather2Compat", categoryModdedCompatability, true, "Fix clash between weather2 and LOTRs EntityRenderer. This fixes heavy lag when both are installed. This does NOT fix any other incompatibilities that might be present");
+        enableWeather2LOTRCompat = config.getBoolean("weather2Compat", categoryModdedCompatibility, true, "Fix clash between weather2 and LOTRs EntityRenderer. This fixes heavy lag when both are installed. This does NOT fix any other incompatibilities that might be present");
 
-        addRedstoneToMiddleEarth = config.getInt("redstoneInME", categoryModdedCompatability, 1, 0, 2, "Add redstone ore generation to middle earth, 0 = off, 1 = only in red mountains, 2 = everywhere");
-        redstoneVeinSize = config.getInt("redstoneVeinSize", categoryModdedCompatability, 8, 0, 64, "Redstone ore vein size");
-        redstoneMinYLevel = config.getInt("redstoneMinYLevel", categoryModdedCompatability, 0, 0, 256, "Redstone ore minimum y level");
-        redstoneMaxYLevel = config.getInt("redstoneMaxYLevel", categoryModdedCompatability, 48, 0, 256, "Redstone ore maximum y level");
-        redstoneRarity = config.getFloat("redstoneRarity", categoryModdedCompatability, 8, 0, 100, "Redstone ore rarity");
+        addRedstoneToMiddleEarth = config.getInt("redstoneInME", categoryModdedCompatibility, 1, 0, 2, "Add redstone ore generation to middle earth, 0 = off, 1 = only in red mountains, 2 = everywhere");
+        redstoneVeinSize = config.getInt("redstoneVeinSize", categoryModdedCompatibility, 8, 0, 64, "Redstone ore vein size");
+        redstoneMinYLevel = config.getInt("redstoneMinYLevel", categoryModdedCompatibility, 0, 0, 256, "Redstone ore minimum y level");
+        redstoneMaxYLevel = config.getInt("redstoneMaxYLevel", categoryModdedCompatibility, 48, 0, 256, "Redstone ore maximum y level");
+        redstoneRarity = config.getFloat("redstoneRarity", categoryModdedCompatibility, 8, 0, 100, "Redstone ore rarity");
 
-        addDModFoxesToME = config.getBoolean("addDModFoxesToME", categoryModdedCompatability, true, "Add DMod foxes to lotr biomes that have foxes in the 1.16.5 version of the mod");
+        addDModFoxesToME = config.getBoolean("addDModFoxesToME", categoryModdedCompatibility, true, "Add DMod foxes to lotr biomes that have foxes in the 1.16.5 version of the mod");
         //Value taken from renewed 5.5
         //In renewed the weight for wolves is 10 * multiplier, in legacy it varies but is either 10 or 4 usually
         //As such I've taken the weight from renewed, halved it and then apply multiplier per biome
-        baseFoxSpawnChance = config.getInt("baseFoxSpawnChance", categoryModdedCompatability, 8, 0, 100, "Base chance for foxes to spawn in lotr biomes that have foxes");
+        baseFoxSpawnChance = config.getInt("baseFoxSpawnChance", categoryModdedCompatibility, 8, 0, 100, "Base chance for foxes to spawn in lotr biomes that have foxes");
 
-        minimumFoxSpawnGroup = config.getInt("minimumFoxSpawnGroup", categoryModdedCompatability, 2, 0, 100, "Minimum group size for fox spawns");
-        maximumFoxSpawnGroup = config.getInt("maximumFoxSpawnGroup", categoryModdedCompatability, 4, 0, 100, "Maximum group size for fox spawns");
+        minimumFoxSpawnGroup = config.getInt("minimumFoxSpawnGroup", categoryModdedCompatibility, 2, 0, 100, "Minimum group size for fox spawns");
+        maximumFoxSpawnGroup = config.getInt("maximumFoxSpawnGroup", categoryModdedCompatibility, 4, 0, 100, "Maximum group size for fox spawns");
+
+        addEFRBeehivesToME = config.getBoolean("addEFRBeeHivesToME", categoryModdedCompatibility, true, "Add beehives to lotr trees in Middle-earth to trees/biomes that have bees in the 1.16.5 version of the mod, chance per tree type and biome can be configured in beehives.json. Additionally registers a bunch of lotr flowers and crops to the bee config and changes the mead recipe to require honey bottles");
+
         if (config.hasChanged()) {
             config.save();
         }
