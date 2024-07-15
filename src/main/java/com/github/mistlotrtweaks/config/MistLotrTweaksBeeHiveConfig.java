@@ -29,10 +29,10 @@ public class MistLotrTweaksBeeHiveConfig {
     private static final Gson gson = new GsonBuilder().setPrettyPrinting()
         .create();
 
-    private static final Type dataType = new TypeToken<Map<String, EnumMap<LOTRTreeType, Map<String, Integer>>>>() {
+    private static final Type dataType = new TypeToken<Map<String, Map<LOTRTreeType, Map<String, Integer>>>>() {
     }.getType();
 
-    private static Map<String, EnumMap<LOTRTreeType, Map<String, Integer>>> privateData = new HashMap<>();
+    private static Map<String, Map<LOTRTreeType, Map<String, Integer>>> privateData = new HashMap<>();
 
     /**
      * The upper bound of the random number used for determining if a hive should be spawned.
@@ -62,7 +62,8 @@ public class MistLotrTweaksBeeHiveConfig {
             file.toPath(),
             StandardCharsets.UTF_8)) {
             privateData = gson.fromJson(reader, dataType);
-            data = privateData.get("data");
+            data = new EnumMap<>(LOTRTreeType.class);
+            data.putAll(privateData.get("data"));
         } catch (IOException ignored) {
             MistLotrTweaks.logger.error("Failed to read beehive config data");
         }
